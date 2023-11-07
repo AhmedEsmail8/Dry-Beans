@@ -32,14 +32,8 @@ def plot_decision_boundary(model, X_test, y_test, class1, class2, include_bias=T
     # Scatter plot for Class 2
     plt.scatter(X_test[y_test == 1, 0], X_test[y_test == 1, 1], color='red', label=class2)
 
-    if include_bias:
-        # Decision boundary with bias
-        x1 = np.linspace(X_test[:, 0].min(), X_test[:, 0].max(), 100)
-        x2 = -(model.weights[0] * x1 + model.bias) / model.weights[1]
-    else:
-        # Decision boundary without bias
-        x1 = np.linspace(X_test[:, 0].min(), X_test[:, 0].max(), 100)
-        x2 = -(model.weights[0] * x1) / model.weights[1] if model.bias is not None else None
+    x1 = np.linspace(X_test[:, 0].min(), X_test[:, 0].max(), 100)
+    x2 = -(model.weights[0] * x1 + model.bias) / model.weights[1]
 
     if x2 is not None:
         plt.plot(x1, x2, color='black', label='Decision Boundary')
