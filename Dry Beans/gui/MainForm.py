@@ -196,11 +196,16 @@ class DryBeanClassifierApp:
         btn.bar_btn.config(background='#0e1118', command=self.create_model)
         btn.place(x=270, y=550)
 
-    @staticmethod
-    def create_show_graph_button(frame):
+    def create_show_graph_button(self, frame):
         btn = CustomButton.CustomButton(frame, "           Show Graph           ")
-        btn.bar_btn.config(background='#0e1118')
+        btn.bar_btn.config(background='#0e1118', command=self.plt)
         btn.place(x=570, y=550)
+
+    def plt(self):
+        if self.model_built==True:
+            self.model.plot()
+        else:
+            messagebox.showerror("error", "please build the model first!")
 
     def create_accuracy_label(self, accuracy):
         self.acc_label1 = tk.Label(self.frame, text="Accuracy : ", bg='#0e1118', fg='white', font=('Helvetica', 18, 'normal'))

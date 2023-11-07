@@ -11,17 +11,17 @@ import os
 
 class FileForm:
     def __init__(self, root, upload_logo, logo):
-        self.table_frame = tk.Frame(root, bg="white", width=800, height=44)
-
+        self.table_frame = None
+        self.root = root
         self.panel = tk.Frame(root, width=350, height=900, bg="#262730")
-        columns = ('first_name', 'last_name', 'email', 'tmp', 'tmp2', 'tmp3')
-        self.tree = ttk.Treeview(self.table_frame, columns=columns, show='headings', height=20)
-        self.scrollbar = ttk.Scrollbar(self.table_frame, orient=tk.VERTICAL, command=self.tree.yview)
+        self.tree = None
+        self.scrollbar = None
         self.drag_drop_frame = tk.Frame(root, bg="#262730", width=800, height=100)
         self.logo = logo
         self.upload_logo = upload_logo
         self.root = root
         self.model = None
+        self.file_flag = False
         s = ttk.Style()
         s.theme_use('clam')
 
@@ -63,6 +63,11 @@ class FileForm:
 
     def browse_file(self):
         try:
+            if self.file_flag:
+                self.scrollbar.destroy()
+                self.table_frame.destroy()
+                self.tree.destroy()
+
             file_path = filedialog.askopenfilename(
                 filetypes=[("CSV Files", "*.csv"), ("Excel Files", "*.xlsx")]
             )
@@ -71,7 +76,13 @@ class FileForm:
                 df = pd.read_excel(file_path)
             else:
                 df = pd.read_csv(file_path)
+            columns = list(df.columns)
+            columns.append('Class')
+            self.table_frame = tk.Frame(self.root, bg="white", width=800, height=44)
+            self.tree = ttk.Treeview(self.table_frame, columns=columns, show='headings', height=20)
+            self.scrollbar = ttk.Scrollbar(self.table_frame, orient=tk.VERTICAL, command=self.tree.yview)
             self.create_table_frame(df)
+            self.file_flag=True
         except:
             messagebox.showerror("error", "Something Wrong!")
 

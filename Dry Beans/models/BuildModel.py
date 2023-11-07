@@ -5,7 +5,7 @@ warnings.filterwarnings('ignore')
 import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder, StandardScaler
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, ConfusionMatrixDisplay
 from models.Evaluation import *
 import numpy as np
 
@@ -72,6 +72,10 @@ class BuildModel:
 
 
     def plot(self):
+        y_pred = self.model.predict(self.X_test)
+        conf_matrix = confusion_matrix(self.y_test, y_pred)
+        disp = ConfusionMatrixDisplay(confusion_matrix=conf_matrix, display_labels=[-1, 1])
+        disp.plot()
         plot_decision_boundary(self.model, self.X_test, self.y_test, self.labels[0], self.labels[1],
                                include_bias=self.include_bias)
 
