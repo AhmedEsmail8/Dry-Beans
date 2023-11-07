@@ -25,12 +25,4 @@
 # # Encode the class labels
 # y_train = label.transform(y_train)
 # y_test = label.transform(y_test)
-#
-# # Scale the features
-# X_train = scaler.transform(X_train)
-# X_test = scaler.transform(X_test)
-#
-# # Augment the feature vectors with a constant value of 1 for the bias term if include_bias is True
-# if include_bias:
-#     X_train = np.c_[X_train, np.ones(X_train.shape[0])]
-#     X_test = np.c_[X_test, np.ones(X_test.shape[0])]
+

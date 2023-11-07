@@ -53,7 +53,7 @@ class BuildModel:
         self.preprocess_data()
         self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(self.X, self.y, test_size=40,
                                                                                 stratify=self.y,
-                                                                                random_state=0)
+                                                                                random_state=0,shuffle=True)
         self.model.train(self.X_train, self.y_train)
         y_pred = self.model.predict(self.X_test)
         print("y_pred = -----------------------")
@@ -70,12 +70,11 @@ class BuildModel:
 
         print('bias = ', self.model.bias)
 
-
     def plot(self):
         y_pred = self.model.predict(self.X_test)
         conf_matrix = confusion_matrix(self.y_test, y_pred)
         disp = ConfusionMatrixDisplay(confusion_matrix=conf_matrix, display_labels=[-1, 1])
-        disp.plot()
+        disp.plot(cmap='Blues')
         plot_decision_boundary(self.model, self.X_test, self.y_test, self.labels[0], self.labels[1],
                                include_bias=self.include_bias)
 
