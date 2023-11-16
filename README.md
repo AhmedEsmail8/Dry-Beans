@@ -63,7 +63,20 @@ We developed a user-friendly GUI that allows users to interact with the model.
 * **Intuitive Controls:** The GUI offers an intuitive interface for users to interact with the model without requiring programming knowledge.
 
 ## Screenshots :
+1. Single Prediction
+   
+![WhatsApp Image 2023-11-07 at 19 15 55_8f7a1ce5](https://github.com/Yasmine-Khaled/Dry-Beans/assets/89998528/5a7799bc-59ed-4ae7-a7c0-2429083fa6c3)
+2. Batch Prediction using .xlsx file
 
+![WhatsApp Image 2023-11-07 at 19 15 54_e9d8df86](https://github.com/Yasmine-Khaled/Dry-Beans/assets/89998528/b264a17f-d270-432d-b01a-e2f5e03c35b6)
 
+![WhatsApp Image 2023-11-07 at 19 15 56_c253b915](https://github.com/Yasmine-Khaled/Dry-Beans/assets/89998528/a63d8e78-7528-496a-8459-b1040d80801a)
+
+4. Build the Model
+
+![WhatsApp Image 2023-11-07 at 19 15 54_a977f190](https://github.com/Yasmine-Khaled/Dry-Beans/assets/89998528/e78c3b55-6a2f-4a10-9c00-fe4e9447f1ff)
+4. Model Prediction
+
+![WhatsApp Image 2023-11-07 at 19 15 54_6fccd534](https://github.com/Yasmine-Khaled/Dry-Beans/assets/89998528/d1ec1fe8-9c12-4e48-aab5-21ea5ad4b042)
 
 **Feel free to reach out with any questions or suggestions!**
