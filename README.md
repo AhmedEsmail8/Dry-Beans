@@ -72,7 +72,7 @@ We developed a user-friendly GUI that allows users to interact with the model.
 
 ![WhatsApp Image 2023-11-07 at 19 15 56_c253b915](https://github.com/Yasmine-Khaled/Dry-Beans/assets/89998528/a63d8e78-7528-496a-8459-b1040d80801a)
 
-4. Build the Model
+3. Build the Model
 
 ![WhatsApp Image 2023-11-07 at 19 15 54_a977f190](https://github.com/Yasmine-Khaled/Dry-Beans/assets/89998528/e78c3b55-6a2f-4a10-9c00-fe4e9447f1ff)
 4. Model Prediction
