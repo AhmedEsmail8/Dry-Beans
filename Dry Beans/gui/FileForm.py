@@ -43,11 +43,11 @@ class FileForm:
             x=70, y=430)
 
         row_prediction_button = CustomButton.CustomButton(self.panel, "Get Row Prediction")
-        row_prediction_button.bar_btn.config(command=self.PredictRow)
+        row_prediction_button.btn.config(command=self.PredictRow)
         row_prediction_button.place(x=80, y=550)
 
         build_model_button = CustomButton.CustomButton(self.panel, "      Build Model      ")
-        build_model_button.bar_btn.config(command=self.ToBuildModel)
+        build_model_button.btn.config(command=self.ToBuildModel)
         build_model_button.place(x=80, y=650)
 
     def PredictRow(self):
@@ -99,7 +99,7 @@ class FileForm:
                  fg="#78878e", border=0).place(x=110, y=50)
 
         btn = CustomButton.CustomButton(self.drag_drop_frame, "Browse Files")
-        btn.bar_btn.config(command=self.browse_file)
+        btn.btn.config(command=self.browse_file)
         btn.place(x=600, y=28)
 
     def create_table_frame(self, df):

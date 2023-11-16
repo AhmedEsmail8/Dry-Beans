@@ -43,11 +43,11 @@ class DryBeanClassifierApp:
 
     def create_buttons(self, panel):
         row_prediction_button = CustomButton.CustomButton(panel, "Get row prediction")
-        row_prediction_button.bar_btn.config(command=self.PredictRow)
+        row_prediction_button.btn.config(command=self.PredictRow)
         row_prediction_button.place(x=80, y=550)
 
         get_file_btn = CustomButton.CustomButton(panel, "Get file prediction")
-        get_file_btn.bar_btn.config(command=self.ToFilePrediction)
+        get_file_btn.btn.config(command=self.ToFilePrediction)
         get_file_btn.place(x=80, y=650)
 
     def ToFilePrediction(self):
@@ -193,12 +193,12 @@ class DryBeanClassifierApp:
 
     def create_data_entry_button(self, frame):
         btn = CustomButton.CustomButton(frame, "           Enter Data           ")
-        btn.bar_btn.config(background='#0e1118', command=self.create_model)
+        btn.btn.config(background='#0e1118', command=self.create_model)
         btn.place(x=270, y=550)
 
     def create_show_graph_button(self, frame):
         btn = CustomButton.CustomButton(frame, "           Show Graph           ")
-        btn.bar_btn.config(background='#0e1118', command=self.plt)
+        btn.btn.config(background='#0e1118', command=self.plt)
         btn.place(x=570, y=550)
 
     def plt(self):

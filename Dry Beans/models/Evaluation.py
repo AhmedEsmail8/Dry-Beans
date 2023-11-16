@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+
 def confusion_matrix(y_true, y_pred):
     unique_classes = np.unique(y_true)
     num_classes = len(unique_classes)
@@ -17,6 +18,7 @@ def confusion_matrix(y_true, y_pred):
             matrix[i, j] = np.sum(true_class_indices & predicted_class_indices)
 
     return matrix
+
 
 def calculate_overall_accuracy(confusion_matrix):
     # Calculate the overall accuracy using the diagonal of the confusion matrix

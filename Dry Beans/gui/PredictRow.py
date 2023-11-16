@@ -35,11 +35,11 @@ class PredictRow:
 
     def create_buttons(self, panel):
         row_prediction_button = CustomButton.CustomButton(panel, "Get File Prediction")
-        row_prediction_button.bar_btn.config(command=self.ToFilePrediction)
+        row_prediction_button.btn.config(command=self.ToFilePrediction)
         row_prediction_button.place(x=80, y=550)
 
         build_model_button = CustomButton.CustomButton(panel, "      Build Model      ")
-        build_model_button.bar_btn.config(command=self.ToBuildModel)
+        build_model_button.btn.config(command=self.ToBuildModel)
         build_model_button.place(x=80, y=650)
 
     def ToFilePrediction(self):
@@ -84,7 +84,7 @@ class PredictRow:
 
     def create_prediction_button(self, frame):
         predict_button = CustomButton.CustomButton(frame, "    Predict    ")
-        predict_button.bar_btn.config(background='#0e1118', command=self.predict)
+        predict_button.btn.config(background='#0e1118', command=self.predict)
         predict_button.place(x=450, y=250)
 
     def create_prediction_label(self, frame, predicted_feature):

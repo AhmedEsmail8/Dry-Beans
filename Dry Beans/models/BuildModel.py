@@ -49,25 +49,25 @@ class BuildModel:
         df = self.scaler.transform(df)
         return df
 
+
     def build(self):
         self.preprocess_data()
         self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(self.X, self.y, test_size=40,
                                                                                 stratify=self.y,
-                                                                                random_state=0,shuffle=True)
+                                                                                random_state=0,
+                                                                                shuffle=True)
         self.model.train(self.X_train, self.y_train)
         y_pred = self.model.predict(self.X_test)
-        print("y_pred = -----------------------")
-        print(y_pred)
-        print(self.y_test)
         # Calculate accuracy
         print("Algorithm Evaluation")
-        self.accuracy = accuracy_score(self.y_test, y_pred)
-        print(f"Accuracy: {self.accuracy * 100.0:.2f}%")
+
 
         conf_matrix = confusion_matrix(self.y_test, y_pred)
         print("Confusion Matrix:")
         print(conf_matrix)
 
+        self.accuracy = calculate_overall_accuracy(conf_matrix)
+        print(f"Accuracy: {self.accuracy * 100.0:.2f}%")
         print('bias = ', self.model.bias)
 
     def plot(self):
